@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-style: italic;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: #333;
+            font-size: 24px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Event Registration Form</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
+        <label for="event">Event:</label>
+        <select id="event" name="event" required>
+            <option value="">Select an event</option>
+            <option value="event1">technichal program</option>
+            <option value="event2">Event 2</option>
+            <option value="event3">Event 3</option>
+        </select><br><br>
+        <button type="submit">Register</button>
+        <p id="success"></p>
+
+
+
+
+
+    </form>
+
+    <script>
+
+        document.querySelector("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            let nameInput = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phoneno = document.getElementById("phone").value;
+            let eventSelect = document.getElementById("event").value;
+
+            if (nameInput === "" || email === "" || phoneno === "" || eventSelect === "") {
+                document.getElementById("success").textContent = "Please fill in all fields.";
+            } else {
+                document.getElementById("success").textContent = "Registration successful!";
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
